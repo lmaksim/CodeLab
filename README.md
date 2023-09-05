@@ -1,2 +1,4 @@
 # codeblocks
-contain usefull code elements that can be used generically 
+The code provided in this folder is intended for personal use. 
+In case anyone will choose to download and use this code, the 
+it will be done on his/her personal responsibility only.
