@@ -1,3 +1,6 @@
+/* You may use, distribute and modify this code.
+ * Any usage of this code is under the user responsibility only!!! */
+
 #ifndef __LLIST_H__
 #define __LLIST_H__
 
