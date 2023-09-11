@@ -1,4 +1,6 @@
-/*************************************************/
+/* You may use, distribute and modify this code.
+ * Any usage of this code is under the user responsibility only!!! */
+
 #include "llist.h"
 #include <stdio.h>
 #include <stdlib.h>
