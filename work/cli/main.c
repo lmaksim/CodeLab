@@ -1,6 +1,3 @@
-/* You may use, distribute and modify this code.
- * Any usage of this code is under the user responsibility only!!! */
-
 #include <stdio.h>
 #include <conio.h>
 #include "middlware/cli.h"

@@ -1,6 +1,6 @@
 /* You may use, distribute and modify this code.
  * Any usage of this code is under the user responsibility only!!! */
-
+ 
 #ifndef __ARRAY_H__
 #define __ARRAY_H__
 

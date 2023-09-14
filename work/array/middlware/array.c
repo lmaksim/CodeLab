@@ -1,6 +1,7 @@
 /* You may use, distribute and modify this code.
  * Any usage of this code is under the user responsibility only!!! */
-
+ 
+/*************************************************/
 #include "array.h"
 #include <stdio.h>
 #include <stdlib.h>

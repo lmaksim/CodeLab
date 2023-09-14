@@ -1,6 +1,7 @@
 /* You may use, distribute and modify this code.
  * Any usage of this code is under the user responsibility only!!! */
-
+ 
+/*************************************************/
 #include "llist.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -114,7 +115,7 @@ bool llist_node_switch(struct llist* p_ll,
                        struct node* p_nodes)
 {
 
-    /* if nodef is firts */
+    /* if nodef is first */
     if (p_nodef == p_ll->p_head)
         p_ll->p_head = p_nodes;
     else
@@ -159,33 +160,30 @@ struct node* llist_node_linear_search(struct llist* p_ll,
 bool llist_node_bubble_sort(struct llist* p_ll,
                             llist_node_cmp_cb* p_func)
 {
-    struct node* p_nodet;
-    bool switchflag = true;
-    bool exitflag = false;
+    struct node* p_node;
+    bool flag = true;
 
-    while (false == exitflag)
+    while (flag == true)
     {
-        p_nodet = p_ll->p_head;
-        switchflag = false;
-        while (p_nodet->p_next != NULL)
+        flag = false;
+        p_node = p_ll->p_head;
+        while (p_node->p_next != NULL)
         {
-            if (p_func(p_nodet, p_nodet->p_next) == 1)  // p1> p2
+            if (p_func(p_node, p_node->p_next) > 0)  // p1> p2
             {
-                llist_node_switch(p_ll, p_nodet, p_nodet->p_next);
-                p_nodet = p_nodet->p_prev;
-                switchflag = true;
+                llist_node_switch(p_ll, p_node, p_node->p_next);
+                p_node = p_node->p_prev;
+                flag = true;
             }
-            p_nodet = p_nodet->p_next;
+            p_node = p_node->p_next;
         }
-        if (switchflag == false)
-            exitflag = true;
     }
     return true;
 }
 
 /* ---------  debug functions -------------*/
 void llist_debug_print_node_params(struct node* p_node,
-                                   llist_node_data_cb* p_func)
+                                   llist_node_print_cb* p_func)
 {
     printf("\n\nnode data: ");
     printf("\nnode = %p ", (p_node));
@@ -202,7 +200,7 @@ void llist_debug_print_llist_params(struct llist* p_llist)
 }
 
 void llist_debug_print_llist_all_nodes(struct llist* p_llist,
-                                       llist_node_data_cb* p_func)
+                                       llist_node_print_cb* p_func)
 {
     struct node* p_nodet = p_llist->p_head;
 
@@ -213,4 +211,5 @@ void llist_debug_print_llist_all_nodes(struct llist* p_llist,
         llist_debug_print_node_params(p_nodet, p_func);
         p_nodet = p_nodet->p_next;
     }
+    printf("\n-------------------------------");
 }
