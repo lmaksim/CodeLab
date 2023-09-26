@@ -3,6 +3,8 @@
  
 #include "cli_test.h"
 #include "middlware/cli.h"
+#include <stdio.h>
+#include <conio.h>
 //---------------------------------
 bool cli_tst1_cb( char *prms )
 {
@@ -97,6 +99,23 @@ bool cli_test_init()
     if ( cli_cmd_register_new ( &cli_cmd_test3 ) == false )
     {
         printf("No option to register new command\n");
+        return false;
+    }
+    return true;
+}
+
+int cli_main()
+{
+    if (cli_test_init() == true)
+    {
+        while (1)
+        {
+            char ch;
+            ch = _getch();
+            printf("%c", ch);
+            if (cli_cmd_process_char(ch) == false)
+                return false;
+        }
         return false;
     }
     return true;

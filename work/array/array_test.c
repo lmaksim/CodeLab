@@ -1,21 +1,18 @@
 /* You may use, distribute and modify this code.
  * Any usage of this code is under the user responsibility only!!! */
- 
+
 #include "array_test.h"
 #include <stdio.h>
 #include <conio.h>
 
 /**********************************/
-/*  e_arrequ,
-	e_arrbig,
-	e_arrsmall */
 
 
 /**********************************/
 void user_arr_get_elm_data(int* p_elm)
 {
     printf("\n Enter data:");
-    scanf("%d", p_elm);
+    scanf_s("%d", p_elm);
 }
 
 char user_arr_cmp_elm(unsigned char* p_elmf,

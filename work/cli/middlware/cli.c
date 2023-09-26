@@ -67,7 +67,7 @@ unsigned char cli_cmd_process_tab( struct cli_cmd *cmd_arr, char *cmd )
 
 unsigned char cli_cmd_handle_error( void )
 {
-    printf( "\nerror: no %s command found", cmd );
+    printf( "\nerror: no %s command found\n", cmd );
     return 1;
 }
 

@@ -2,35 +2,64 @@
  * Any usage of this code is under the user responsibility only!!! */
  
 /**********************************/
+#include "middlware/llist.h"
 #include "llist_test.h"
 #include <stdio.h>
+#include <string.h>
 
 /**********************************/
-void user_node_get_data(struct node* p_node,
-                        struct user_data* p_udata)
+int llist_main(void)
 {
-    printf("Enter user data : ID(id):");
-    scanf("%d", &p_udata->id);
-    p_node->p_data = p_udata;
+    char* data1 = "\nmy data for node1";
+    struct node nd1 = { NULL,NULL,data1 };
+
+    char* data2 = "\nmy data for node2";
+    struct node nd2 = { NULL,NULL,data2 };
+
+    char* data3 = "\nmy data for node3";
+    struct node nd3 = { NULL,NULL,data3 };
+
+    char* data4 = "\nmy data for node4";
+    struct node nd4 = { NULL,NULL,data4 };
+
+    struct llist my_list = { NULL,NULL };
+
+
+    //================================
+    if (llist_node_append(&my_list, &nd1) == false)
+        printf("error adding node %s", (char*)nd1.p_data);
+
+    if (llist_node_append(&my_list, &nd2) == false)
+        printf("error adding node %s", (char*)nd2.p_data);
+
+    if (llist_node_append(&my_list, &nd3) == false)
+        printf("error adding node %s", (char*)nd3.p_data);
+
+    llist_debug_print_llist_all_nodes(&my_list, 
+                                      llist_user_node_debug_print_data);
+
+    if (llist_node_insert(&my_list, &nd2, &nd4) == false)
+        printf("error adding node %s", (char*)nd4.p_data);
+
+    llist_debug_print_llist_all_nodes(&my_list, 
+                                      llist_user_node_debug_print_data);
+
+    llist_node_bubble_sort(&my_list, llist_user_node_compare);
+    llist_debug_print_llist_all_nodes(&my_list, 
+                                      llist_user_node_debug_print_data);
+
+    return 1;
 }
 
-char user_node_compare(struct node* p_nodef,
-                       struct node* p_nodes)
+void llist_user_node_debug_print_data(struct node* nd)
 {
-    char ret = 0;
-
-    if (((struct user_data*)p_nodef->p_data)->id == ((struct user_data*)p_nodes->p_data)->id)
-        ret = 0;
-    else if (((struct user_data*)p_nodef->p_data)->id > ((struct user_data*)p_nodes->p_data)->id)
-        ret = 1;
-    else if (((struct user_data*)p_nodef->p_data)->id < ((struct user_data*)p_nodes->p_data)->id)
-        ret = -1;
-
-    return ret;
+    printf("%s", (char*)nd->p_data);
 }
 
-void user_node_debug_print_data(struct node* p_node)
+int llist_user_node_compare(struct node* nd1, struct node* nd2)
 {
-    printf("\nnode data = %d ", ((struct user_data*)p_node->p_data)->id);
+    int rcv = strcmp((char*)nd1->p_data, (char*)nd2->p_data);
+    return(rcv);
 }
+
 /**********************************/
