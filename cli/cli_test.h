@@ -3,6 +3,8 @@
  
 #include <stdbool.h>
 
+ /* this function implements inialization of the cli
+  * paramters */
 bool cli_test_init( void );
 
 int cli_main( void );

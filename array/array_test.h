@@ -12,24 +12,22 @@ struct user_arr_elm
 } ;
 
 /**********************************/
-/* this function implements compare function according
- * to llist_node_data_ft in llist.h typedef */
+/* Function implements compare function according
+ * to arr_elm_prt_cb typedef in llist.h */
 char user_arr_cmp_elm ( unsigned char*, unsigned char* );
 
-/* this function implements switch function according
- * to llist_node_data_ft in llist.h typedef */
+/* Function implements switch between 
+ * two elements according to arr_elm_switch_cb typedef in llist.h */
 void user_arr_switch_elm ( unsigned char*, unsigned char* );
 
-/* this function implememets data extraction function according
- * to llist_node_cmp_ft in llist.h typedef */
+/* Function implements element to element copy according
+ * to arr_elm_cpy_cb typedef in llist.h */
 void user_arr_cpy_elm_data( unsigned char*, unsigned char* );
 
-/* this function implememets data extraction function according
- * to llist_node_cmp_ft in llist.h typedef */
+/* Function implements printing of  
+ * element according to arr_elm_prt_cb typedef in llist.h */
 void user_arr_print_elm_data( unsigned char* );
 
-/* !!!!!!!!!n function according
- * to llist_node_cmp_ft in llist.h typedef */
 int array_main(void);
 
 /**********************************/

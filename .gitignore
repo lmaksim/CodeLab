@@ -80,3 +80,8 @@ x64/Debug/CodeLab.exe
 x64/Debug/Cli.pdb
 x64/Debug/Cli.exe
 x64/Debug/CodeLab.pdb
+.vs/CodeLab/FileContentIndex/f86e2b2a-df2b-498e-a881-9309499f26c1.vsidx
+.vs/CodeLab/v17/ipch/AutoPCH/455c1d14e0a837a8/CLI_TEST.ipch
+.vs/CodeLab/v17/ipch/AutoPCH/64846dcd0d925e82/CLI.ipch
+*.vsidx
+*.ipch

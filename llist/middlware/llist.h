@@ -62,18 +62,21 @@ bool llist_node_switch(struct llist*,
                        struct node*,
                        struct node*);
 
-/* Function searches for the node in the list using 
+/* ============= search functions ============== */
+/* Function searches for the node in the list using
  * liniar search.
    Note: llist_node_cmp_cb must be implemented by user */
 struct node *llist_node_linear_search(struct llist*,
                                       struct node*,
                                       llist_node_cmp_cb*);
 
+/* ============= sort functions ============== */
 /* Function sort the list using bubble search.
    Note: llist_node_cmp_cb must be implemented by user */
 bool llist_node_bubble_sort(struct llist*,
                             llist_node_cmp_cb*);
 
+/* ============= debug functions ============= */
 /* Function print node data
    Note: llist_node_print_cb must be implemented by user */
 void llist_debug_print_node_params(struct node*,

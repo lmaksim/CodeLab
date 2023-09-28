@@ -13,13 +13,13 @@ struct fifo
 
   unsigned char* p_head; // init at second elememt
   unsigned char* p_tail; // init at first elememt
-  bool empty;         // init false
+  bool empty;            // init false
 
 };
 
-/* ============= function pointers type defs ============== */
+/* ============= function type definitions ============== */
 /* Function typedef to be used for element compare action.
- * Must be implemented by user , all results are related for
+ * Must be implemented by user, all results are related for
  * first element as compare to second */
 typedef int (arr_elm_cmp_cb)(unsigned char*, unsigned char*);
 
@@ -50,7 +50,6 @@ unsigned char* array_binary_search(unsigned char* p_arr,
                                    arr_elm_cmp_cb* p_cmpf);
 
 /* ============= sort functions ============== */
-/* BFS */
 void array_buble_sort(unsigned char* p_arr,
                       size_t num,
                       size_t size,

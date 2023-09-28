@@ -23,7 +23,7 @@ struct cli_cmd {
 // register new command
 bool cli_cmd_register_new ( struct cli_cmd* );
 
-// used for help command
+// used by "help" command
 bool cli_cmd_print_all( char* );
 
 // main function to be called periodically
