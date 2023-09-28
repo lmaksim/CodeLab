@@ -28,4 +28,8 @@ void user_arr_cpy_elm_data( unsigned char*, unsigned char* );
  * to llist_node_cmp_ft in llist.h typedef */
 void user_arr_print_elm_data( unsigned char* );
 
+/* !!!!!!!!!n function according
+ * to llist_node_cmp_ft in llist.h typedef */
+int array_main(void);
+
 /**********************************/

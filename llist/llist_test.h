@@ -13,7 +13,7 @@ struct user_data
 
 /**********************************/
 /* this function implements compare function according
- * to llist_node_data_ft in llist.h typedef */
+ * to llist_node_cmp_cb typedef in llist.h */
 int llist_user_node_compare ( struct node*, struct node* );
 
 /* this function prints one node data */

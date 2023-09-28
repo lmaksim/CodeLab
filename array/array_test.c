@@ -46,3 +46,8 @@ void user_arr_print_elm_data(unsigned char* p_elm)
 {
     printf("\n %d ", *p_elm);
 }
+
+int array_main( void )
+{
+    return 1;
+}
