@@ -37,11 +37,11 @@ typedef void (arr_elm_cpy_cb)(unsigned char*, unsigned char*);
 typedef void (arr_elm_prt_cb)(unsigned char*);
 
 /* ============= search functions ============== */
-unsigned char* array_linear_search(unsigned char* p_arr,
-                                   size_t num,
-                                   size_t size,
-                                   unsigned char* p_elm,
-                                   arr_elm_cmp_cb* p_cmpf);
+unsigned char* array_linear_search(unsigned char* p_arr, //pointer to array 
+                                   size_t num,           //number of one elements in unsigned chars
+                                   size_t size,          //size of each element in unsigned chars
+                                   unsigned char* p_elm, //pointer to element to be found
+                                   arr_elm_cmp_cb* p_cmpf); //pointer to fuction to be used for compare
 
 unsigned char* array_binary_search(unsigned char* p_arr,
                                    size_t num,

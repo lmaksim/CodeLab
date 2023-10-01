@@ -14,7 +14,7 @@ struct user_arr_elm
 /**********************************/
 /* Function implements compare function according
  * to arr_elm_prt_cb typedef in llist.h */
-char user_arr_cmp_elm ( unsigned char*, unsigned char* );
+int user_arr_cmp_elm ( unsigned char*, unsigned char* );
 
 /* Function implements switch between 
  * two elements according to arr_elm_switch_cb typedef in llist.h */

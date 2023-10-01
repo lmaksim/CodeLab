@@ -19,15 +19,14 @@ void array_next_elm(unsigned char** p,
 /*************************************************/
 /* ============= search functions ============== */
 unsigned char* array_linear_search(unsigned char* p_arr,
-                           size_t num,
-                           size_t size,
-                           unsigned char* p_elm,
-                           arr_elm_cmp_cb* p_cmpf)
+                                   size_t num,
+                                   size_t size,
+                                   unsigned char* p_elm,
+                                   arr_elm_cmp_cb* p_cmpf)
 {
   unsigned char* p_curr;
 
-  for (p_curr = p_arr; p_curr <
-       p_arr + num * size; p_curr += size)
+  for (p_curr = p_arr; p_curr < p_arr + num * size; p_curr += size)
     if (p_cmpf(p_curr, p_elm) == 0)
       return (p_curr);
 
@@ -35,10 +34,10 @@ unsigned char* array_linear_search(unsigned char* p_arr,
 }
 
 unsigned char* array_binary_search(unsigned char* p_arr,
-                           size_t num,
-                           size_t size,
-                           unsigned char* p_elm,
-                           arr_elm_cmp_cb* p_cmpf)
+                                   size_t num,
+                                   size_t size,
+                                   unsigned char* p_elm,
+                                   arr_elm_cmp_cb* p_cmpf)
 {
   unsigned char* p_head = p_arr;
   unsigned char* p_tail = p_arr + size * num;
@@ -145,11 +144,11 @@ void array_quick_sort(unsigned char* p_arr,
 
 /* ============= fifo functions ============== */
 bool array_fifo_push(unsigned char* p_arr,
-                          size_t num,
-                          size_t size,
-                          struct fifo* p_fifo,
-                          unsigned char* p_elm,
-                          arr_elm_cpy_cb* p_cpyf)
+                     size_t num,
+                     size_t size,
+                     struct fifo* p_fifo,
+                     unsigned char* p_elm,
+                     arr_elm_cpy_cb* p_cpyf)
 {
   if ((p_fifo->p_head != p_fifo->p_tail) ||
       (p_fifo->empty == true))
@@ -164,11 +163,11 @@ bool array_fifo_push(unsigned char* p_arr,
 }
 
 bool array_fifo_pop(unsigned char* p_arr,
-                         size_t num,
-                         size_t size,
-                         struct fifo* p_fifo,
-                         unsigned char* p_elm,
-                         arr_elm_cpy_cb* p_cpyf)
+                    size_t num,
+                    size_t size,
+                    struct fifo* p_fifo,
+                    unsigned char* p_elm,
+                    arr_elm_cpy_cb* p_cpyf)
 {
   if (p_fifo->empty == false)
   {

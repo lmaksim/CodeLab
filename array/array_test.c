@@ -15,8 +15,8 @@ void user_arr_get_elm_data(int* p_elm)
     scanf_s("%d", p_elm);
 }
 
-char user_arr_cmp_elm(unsigned char* p_elmf,
-                      unsigned char* p_elms)
+int user_arr_cmp_elm(unsigned char* p_elmf,
+                     unsigned char* p_elms)
 {
     if(*p_elmf<*p_elms)
         return -1;
@@ -49,5 +49,10 @@ void user_arr_print_elm_data(unsigned char* p_elm)
 
 int array_main( void )
 {
+    unsigned char array[10] = {1,2,5,8,9,7,3,4,6,5};
+    unsigned char elm = 4; 
+    unsigned char* p = NULL;
+    p = array_linear_search(array, (unsigned char)sizeof(array), 1, &elm, &user_arr_cmp_elm);
+    printf("%d", *p);
     return 1;
 }
