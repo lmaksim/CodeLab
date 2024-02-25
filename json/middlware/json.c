@@ -2,39 +2,49 @@
  * Any usage of this code is under the user responsibility only!!! */
  
 
-
-#include <stddef.h>
-#include <stdbool.h>
-#include <string.h>
-
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-
 
 /* ============= function type definitions ============== */
 /* You may use, distribute and modify this code.
  * Any usage of this code is under the user responsibility only!!! */
 
  /*************************************************/
-#include "json.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#include <stddef.h>
+#include "json.h"
 
 /*************************************************/
 
 /*************************************************/
-void json_string_add(char* json, char* key, char* val)
+void json_text_update(char* json, char* key, char* val) 
+{
+	char* f = json_text_find(json, key);
+	if (f != NULL)
+	{
+	}
+}
+
+void json_text_add(char* json, char* key, char* val)
+{ 	
+}
+
+void json_text_remove(char* key)
 {}
 
-void json_string_remove(char* key)
-{}
+void json_text_get(char* json, char* key)
+{
+	char* f = json_text_find(json, key);
+	if (f != NULL)
+	{
+		/* fined next " or [ --> if " ->" if [ -> ]
+		example: "secretIdentity": "Dan Jukes"
+		         ["Radiation resistance", "Turning tiny", "Radiation blast"] */
+	}
+}
 
-void json_string_update(char* json, char* key, char* val)
-{}
-
-void json_string_get(char* key)
-{}
-
-char* json_string_find(char* json, char* key)
+char* json_text_find(char* json, char* key)
 {
 	while (true)
 	{

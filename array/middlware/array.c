@@ -150,12 +150,14 @@ bool array_fifo_push(unsigned char* p_arr,
                      unsigned char* p_elm,
                      arr_elm_cpy_cb* p_cpyf)
 {
-  if ((p_fifo->p_head != p_fifo->p_tail) ||
-      (p_fifo->empty == true))
+  if (p_fifo->full == false)
   {
     p_cpyf(p_fifo->p_head, p_elm);
     array_next_elm(&p_fifo->p_head,
                    size, num, p_arr);
+    if (p_fifo->p_tail == p_fifo->p_head)
+        p_fifo->full = true; 
+    
     p_fifo->empty = false;
     return true;
   }

@@ -14,7 +14,7 @@ struct fifo
   unsigned char* p_head; // init at second elememt
   unsigned char* p_tail; // init at first elememt
   bool empty;            // init false
-
+  bool full;
 };
 
 /* ============= function type definitions ============== */

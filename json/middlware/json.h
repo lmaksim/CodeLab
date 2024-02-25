@@ -4,20 +4,17 @@
 #ifndef __JSON_H__
 #define __JSON_H__
 
-#include <stddef.h>
-#include <stdbool.h>
-
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 #define JSON_MAX_KEY_SIZE 20
 /* ============= function type definitions ============== */
-void json_string_add(char* json, char* key, char* val);
+void json_text_add(char* json, char* key, char* val);
 
-void json_string_remove(char* key);
+void json_text_remove(char* key);
 
-void json_string_update(char* json, char* key, char* val);
+void json_text_update(char* json, char* key, char* val);
 
-void json_string_get(char* key);
+void json_text_get(char* json, char* key);
 
-char* json_string_find(char* json, char* key);
+char* json_text_find(char* json, char* key);
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 #endif // __JSON_H__
