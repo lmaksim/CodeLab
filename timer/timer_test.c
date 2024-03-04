@@ -15,46 +15,21 @@ void tmr_fuct_cb(int idx)
 
 int timer_main(void)
 {
-	struct timer *ptmr;
+	struct timer *p_tmr;
 
 	timer_init();
 
 	for (int i = 1; i < 10; i = i + 2)
 	{
-		ptmr = (struct timer*)malloc(sizeof(struct timer));
-		if (ptmr == NULL)
+		p_tmr = (struct timer*)malloc(sizeof(struct timer));
+		if (p_tmr == NULL)
 			return false;
-		ptmr->inerv = i; //10ms
-		ptmr->pfuc = tmr_fuct_cb;
-		ptmr->idx = i;
-		ptmr->pnext = NULL;
-		timer_start(ptmr);
+		p_tmr->pfuc = tmr_fuct_cb;
+		p_tmr->index = i;
+		int id = timer_create(p_tmr);
+		timer_start(id,i);
 	}
 
-	for (int i = 10; i > 0; i = i - 2)
-	{
-		ptmr = (struct timer*)malloc(sizeof(struct timer));
-		if (ptmr == NULL)
-			return false;
-		ptmr->inerv = i; //10ms
-		ptmr->pfuc = tmr_fuct_cb;
-		ptmr->idx = i;
-		ptmr->pnext = NULL;
-		timer_start(ptmr);
-	}
-
-	for (int i = 11; i < 15; i = i ++)
-	{
-		ptmr = (struct timer*)malloc(sizeof(struct timer));
-		if (ptmr == NULL)
-			return false;
-		ptmr->inerv = i; //10ms
-		ptmr->pfuc = tmr_fuct_cb;
-		ptmr->idx = i;
-		ptmr->pnext = NULL;
-		timer_start(ptmr);
-	}
-	
 	while (true)
 	{
 		clock_t clk;
