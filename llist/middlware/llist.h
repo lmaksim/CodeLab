@@ -20,7 +20,6 @@ struct llist
 {
     struct node* p_head;
     struct node* p_tail;
-
 };
 
 /* ============= function type definitions ============== */
@@ -41,8 +40,8 @@ typedef void (llist_node_print_cb)(struct node*);
 
 /*============== linked list functions ==============*/
 /* Function that adds the new node to the end of the link,
- * in case the link is empty, creates new list and
- * add first element  */
+ * in case the link is empty, creates new list as the
+ * first element  */
 bool llist_node_append(struct llist*,
                        struct node*);
 

@@ -3,7 +3,7 @@
  
 /**********************************/
 #include "timer_test.h"
-#include "middlware/timer.h"
+#include "middlware\timer.h"
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,20 +15,14 @@ void tmr_fuct_cb(int idx)
 
 int timer_main(void)
 {
-	struct timer *p_tmr;
-
 	timer_init();
 
 	for (int i = 1; i < 10; i = i + 2)
 	{
-		p_tmr = (struct timer*)malloc(sizeof(struct timer));
-		if (p_tmr == NULL)
-			return false;
-		p_tmr->pfuc = tmr_fuct_cb;
-		p_tmr->index = i;
-		int id = timer_create(p_tmr);
-		timer_start(id,i);
+		timer_start(i, tmr_fuct_cb, i);
 	}
+
+	timer_start(0, tmr_fuct_cb, 0);
 
 	while (true)
 	{

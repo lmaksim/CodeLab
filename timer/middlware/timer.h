@@ -10,36 +10,9 @@
 
  /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
-struct timer
-{
-	/*timer inerval*/
-	int	intrv;
-	/*value to be set as param in *pf*/
-	int value;
-	/*pf to be called up to time up with idx value*/
-	void (*pfuc)(int);
-	/*timer index*/
-	int	index;
-	
-	/*time up value*/
-	double timeup;
-	/*overflow flag*/
-	bool ovrfl;
-	/*timer status true for active, false for inactive*/
-	bool status;
-};
-
 bool timer_init(void);
 
-int timer_create(struct timer* ptmr);
-
-bool timer_delete(int idx);
-
-bool timer_start(int idx, int intrv);
-
-double timer_interval_get(int idx);
-
-bool timer_stop(int idx);
+bool timer_start(int intrv, void (*pfuc)(int), int val);
 
 //-----------------------
 void timer_di_update(void);
